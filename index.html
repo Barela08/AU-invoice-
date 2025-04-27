@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alliance University Invoice Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Alliance University Invoice Generator</h1>
+    <form id="invoiceForm">
+        <input type="text" id="studentName" placeholder="Student Name" required>
+        <input type="text" id="fatherName" placeholder="Father's Name" required>
+        <input type="text" id="registrationNumber" placeholder="Registration Number" required>
+        <input type="text" id="admissionNumber" placeholder="Admission Number" required>
+        <input type="text" id="courseName" placeholder="Course Name" required>
+        <input type="text" id="courseDetails" placeholder="Course Details (e.g. B.Tech CSE)" required>
+        <input type="text" id="address" placeholder="Address" required>
+        <input type="text" id="semester" placeholder="Semester" required>
+        <input type="number" id="feesAmount" placeholder="Fees Amount" required>
+        <input type="date" id="paymentDate" required>
+        <input type="text" id="paymentMode" placeholder="Payment Mode (Cash/Online/DD)" required>
+        <input type="text" id="purpose" placeholder="Purpose of Payment" required>
+        <button type="submit">Generate Invoice</button>
+    </form>
+</div>
+
+<div id="invoice" style="display: none;">
+    <div class="invoice-header">
+        <img src="logo.png" alt="Alliance University Logo" class="logo">
+        <h2>Alliance University</h2>
+        <p>Central Campus, Chikkahagade Cross, Chandapura-Anekal Main Road,<br>Bengaluru, Karnataka 562106<br>Phone: +91 80 4619 9000</p>
+        <h3>Official Invoice</h3>
+    </div>
+
+    <div class="invoice-body">
+        <div class="row">
+            <div class="col"><strong>Invoice No:</strong> <span id="invNumber"></span></div>
+            <div class="col"><strong>Payment Date:</strong> <span id="invPaymentDate"></span></div>
+        </div>
+        <div class="row">
+            <div class="col"><strong>Student Name:</strong> <span id="invStudentName"></span></div>
+            <div class="col"><strong>Father's Name:</strong> <span id="invFatherName"></span></div>
+        </div>
+        <div class="row">
+            <div class="col"><strong>Registration No:</strong> <span id="invRegistrationNumber"></span></div>
+            <div class="col"><strong>Admission No:</strong> <span id="invAdmissionNumber"></span></div>
+        </div>
+        <div class="row">
+            <div class="col"><strong>Course Name:</strong> <span id="invCourseName"></span></div>
+            <div class="col"><strong>Course Details:</strong> <span id="invCourseDetails"></span></div>
+        </div>
+        <div class="row">
+            <div class="col"><strong>Address:</strong> <span id="invAddress"></span></div>
+            <div class="col"><strong>Semester:</strong> <span id="invSemester"></span></div>
+        </div>
+        <div class="row">
+            <div class="col"><strong>Fees Amount:</strong> ₹<span id="invFeesAmount"></span></div>
+            <div class="col"><strong>Payment Mode:</strong> <span id="invPaymentMode"></span></div>
+        </div>
+        <div class="row">
+            <div class="col" style="width: 100%;"><strong>Purpose of Payment:</strong> <span id="invPurpose"></span></div>
+        </div>
+    </div>
+
+    <div class="invoice-footer">
+        <img src="stamp.png" alt="University Stamp" class="stamp">
+        <img src="signature.png" alt="Signature" class="signature">
+    </div>
+
+    <button id="download">Download Invoice</button>
+</div>
+
+<script src="html2pdf.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
